@@ -1,0 +1,54 @@
+---
+import ProjectCard from "../ui/ProjectCard.astro";
+import { projects } from "../../data/projects.ts";
+
+---
+
+<section id="projects" class="projects">
+    <div class="container">
+        <h3>Proyectos</h3>
+
+        <p class="intro">
+            Algunos proyectos personales y académicos donde aplico desarrollo web
+            y machine learning a problemas reales.
+        </p>
+
+        <div class="grid">
+            {
+                projects.map(project => (
+                    <ProjectCard project={project} />
+                ))
+            }
+        </div>
+    </div>
+
+    <style>
+        .projects {
+            padding: 6rem 1rem;
+            background-color: #020617;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            max-width: 700px;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+            color: var(--color-text-muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
+</section>

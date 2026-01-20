@@ -1,0 +1,110 @@
+<section id="home" class="hero">
+    <div class="container">
+        <div class="content">
+            <p class="eyebrow">Hola, soy </p>
+            <h1>Edwin Cala</h1>
+
+            <h2>Desarrollador web <br/>
+            con énfasis en Python, Java y React</h2>
+
+            <p class="description">
+                Desarrollo aplicaciones web funcionales y escalables, integrando
+                backend en Python o Java con interfaces modernas en React.
+                Me interesa especialmente la aplicación práctica de machine learning
+                en soluciones reales.
+            </p>
+
+            <div class="actions">
+                <a href="#projects" class="btn primary">Ver proyectos</a>
+                <a href="/cv/Hoja de vida.pdf" class="btn secondary" target="_blank">Descargar CV</a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content {
+            max-width: 650px;
+        }
+
+        .eyebrow {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            margin: 1rem 0;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 1.5rem 0;
+            color: var(--color-text);
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;  
+        }
+
+        .btn.primary {
+            background-color: var(--color-primary);
+            color: #020617;
+        }
+
+        .btn.primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn.secondary {
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+
+        .btn.secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</section>

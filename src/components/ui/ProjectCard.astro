@@ -1,0 +1,108 @@
+---
+import type { Project } from '../../data/projects';
+const { project } = Astro.props;
+---
+
+<article class="card">
+    <header>
+        <h4>{project.title}</h4>
+
+        {project.status === "in-progress" && (
+            <span class="status">En progreso</span>
+        )}
+    </header>
+
+    <p class="description">{project.description}</p>
+
+    {
+        project.stack.length > 0 && (
+            <ul class="stack">
+                {project.stack.map((tech:string) => (
+                    <li class="badge">{tech}</li>
+                ))}
+            </ul>
+        )
+    }
+
+    <footer class="actions">
+        {project.github && (
+            <a href={project.github} target="_blank">Código</a>
+        )}
+        {project.demo && (
+            <a href={project.demo} target="_blank">Demo</a>
+        )}
+    </footer>
+
+    <style>
+        .card {
+            background-color: #020617;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 1,1rem;
+        }
+
+        .status {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            background-color: rgba(56, 189, 248, 0.15);
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .actions a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--color-primary);
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</article>

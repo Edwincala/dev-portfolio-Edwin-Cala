@@ -1,0 +1,16 @@
+@import "./variables.css";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+main {
+    min-height: 100vh;
+}
